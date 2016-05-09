@@ -3,8 +3,9 @@ function install_prereqs() {
     apt-get update
 
     apt-get install -y \
-        python2.7 \
-        pip \
+        python \
+        python-pip \
+        apache2
 
     # restart apache
     service apache2 restart
@@ -12,18 +13,26 @@ function install_prereqs() {
 
 # Install all dependendcies for ipython
 function install_ipython() {
+    # Begin installing ipython dependencies using pip
+    echo "INSTALLING: jinja2 and sphinx"
     pip install \
         jinja2 \
-        sphinx \
-        pyzmq \
+        sphinx
+    # Pip install fails, using apt repository    
+    echo "INSTALLING: python-zmq"
+    apt-get install -y \
+        python-zmq \
+        python-zmq-dbg
+    # Resume installing ipython dependencies using pip
+    echo "INSTALLING: pygements, tornado, and ipython"
+    pip install \
         pygments \
         tornado \
-        ipython
-
-    ipython notebook --ip=0.0.0.0
+        ipython \
+        jupyter
 }
 
 function install_python_nltk() {
-    pip install python-ntlk
-
+    echo "Installing python-nltk module"
+    pip install nltk
 }
