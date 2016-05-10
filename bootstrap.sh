@@ -29,5 +29,8 @@ install_python_nltk
 
 # Run port-forward ipython notebooks
 echo "STARTING: ipython notebook"
-ipython notebook --ip=0.0.0.0
+cd /vagrant
+git pull
+cd /vagrant/notebooks
+ipython notebook --ip=0.0.0.0 &
 

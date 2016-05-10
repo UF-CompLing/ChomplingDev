@@ -5,6 +5,7 @@ function install_prereqs() {
     apt-get install -y \
         python \
         python-pip \
+        git \
         apache2
 
     # restart apache
