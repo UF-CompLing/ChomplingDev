@@ -4,17 +4,25 @@ export DEBIAN_FRONTEND=noninteractive
 # Exit on first error
 set -e
 
-# Indicate where the vagrant folder is mounted in the guest file system
-: ${SHARED_FOLDER=/vagrant}
+# Change to working directory
+cd /vagrant
+
+# Check git installation
+apt-get update
+apt-get install -y git
+
+# Get updated repository
+git pull
+
+# Enforce Unix line-endings
+git config core.eol lf
+git ls-files -z | xargs -0 rm
+git checkout .
 
 # Import helper functions
-. $SHARED_FOLDER/bootstrap_functions.sh
-
-# Create password-protected profile
-#dst setup base
+. bootstrap_functions.sh
 
 # Run installation procedures
-
 echo "RUNNING: 'install_prereqs'"
 install_prereqs
 
@@ -24,13 +32,8 @@ install_ipython
 echo "RUNNING: 'install_ipython_nltk'"
 install_python_nltk
 
-#echo "Installing python-nltk corpora"
-#python $SHARED_FOLDER/nltk_configure.py
-
 # Run port-forward ipython notebooks
 echo "STARTING: ipython notebook"
-cd /vagrant
-git pull
 cd /vagrant/notebooks
 ipython notebook --ip=0.0.0.0 &
 
