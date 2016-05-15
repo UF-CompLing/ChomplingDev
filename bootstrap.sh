@@ -15,9 +15,8 @@ apt-get install -y git
 git pull
 
 # Enforce Unix line-endings
-git config core.eol lf
-git ls-files -z | xargs -0 rm
-git checkout .
+git rm --cached -rf .
+git diff --cached --name-only -z | xargs -n 50 -0 git add -f
 
 # Import helper functions
 . bootstrap_functions.sh

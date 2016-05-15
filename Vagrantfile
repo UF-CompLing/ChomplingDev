@@ -24,6 +24,12 @@ Vagrant.configure(2) do |config|
     s.path = "bootstrap.sh"
   end
 
+  # Update git repository and enforce Unix line endings
+  config.vm.provision "shell", run: "always" do |s|
+    s.inline = "echo 'RUNNING: git update'"
+    s.inline = "cd /vagrant && git pull && git rm --cached -rf . && git diff --cached --name-only -z | xargs -n 50 -0 git add -f"
+  end
+
   # Always run ipython notebook and r-server
   config.vm.provision "shell", run: "always" do |s|
     s.inline = "echo 'RUNNING: ipython notebook'"

@@ -45,8 +45,7 @@ function install_r_server() {
         r-base \
         gdebi-core \
 
-    wget https://download2.rstudio.org/rstudio-server-0.99.902-i386.deb
+    wget -O rstudio-server.deb https://download2.rstudio.org/rstudio-server-0.99.902-i386.deb
 
-    gdebi -n rstudio-server-0.99.902-i386.deb
-
+    gdebi -n rstudio-server.deb
 }
