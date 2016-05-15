@@ -37,3 +37,16 @@ function install_python_nltk() {
     echo "Installing python-nltk module"
     pip install nltk
 }
+
+function install_r_server() {
+    echo "Installing r_server"
+
+    apt-get install -y \
+        r-base \
+        gdebi-core \
+
+    wget https://download2.rstudio.org/rstudio-server-0.99.902-i386.deb
+
+    gdebi -n rstudio-server-0.99.902-i386.deb
+
+}

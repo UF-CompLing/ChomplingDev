@@ -15,7 +15,7 @@ Vagrant.configure(2) do |config|
   #config.hostupdater.aliases = ["chompling.dev"]
   #config.vm.network "private_network", ip: "192.168.33.113"
   config.vm.network "forwarded_port", guest: 8888, host: 8888
-
+  config.vm.network "forwarded_port", guest: 8787, host: 8787
   # Prevent password requests during setup
   #vagrant ALL=(ALL) NOPASSWD: ALL
 
@@ -23,4 +23,11 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell" do |s|
     s.path = "bootstrap.sh"
   end
+
+  # Always run ipython notebook and r-server
+  config.vm.provision "shell", run: "always" do |s|
+    s.inline = "echo 'RUNNING: ipython notebook'"
+    s.inline = "cd /vagrant/notebooks && ipython notebook --ip=0.0.0.0 &"
+  end
+
 end

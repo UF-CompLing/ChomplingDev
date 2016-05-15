@@ -32,8 +32,5 @@ install_ipython
 echo "RUNNING: 'install_ipython_nltk'"
 install_python_nltk
 
-# Run port-forward ipython notebooks
-echo "STARTING: ipython notebook"
-cd /vagrant/notebooks
-ipython notebook --ip=0.0.0.0 &
-
+echo "RUNNING: 'install_r_server'"
+install_r_server
