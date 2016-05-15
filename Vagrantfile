@@ -27,7 +27,7 @@ Vagrant.configure(2) do |config|
   # Update git repository and enforce Unix line endings
   config.vm.provision "shell", run: "always" do |s|
     s.inline = "echo 'RUNNING: git update'"
-    s.inline = "cd /vagrant && git pull && git rm --cached -rf . && git diff --cached --name-only -z | xargs -n 50 -0 git add -f"
+    s.inline = "cd /vagrant && git config core.eol lf && git ls-files -z | xargs -0 rm && git checkout ."
   end
 
   # Always run ipython notebook and r-server
