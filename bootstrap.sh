@@ -31,5 +31,9 @@ install_ipython
 echo "RUNNING: 'install_ipython_nltk'"
 install_python_nltk
 
-echo "RUNNING: 'install_r_server'"
+# Disabled as it takes a considerable amount of time to run 30+ minutes
+#echo "RUNNING: 'install_irkernel'"
+#install_irkernel
+
+#echo "RUNNING: 'install_r_server'"
 install_r_server
