@@ -73,6 +73,19 @@ function install_irkernel() {
 function install_r_server() {
     echo "Installing r_server"
 
+    # Allow apt install to select current version of R
+    if grep "cran.rstudio" /etc/apt/sources.list
+        then echo "Cran mirror already enabled"
+        else echo "Enabling Cran mirror" && echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" | sudo tee -a /etc/apt/sources.list
+    fi
+
+    # Add key from ubuntu keyserver
+    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
+    add-apt-repository -y ppa:marutter/rdev
+
+    # Update repository and install most recent version of r
+    apt-get update
+
     apt-get install -y \
         r-base \
         gdebi-core \
