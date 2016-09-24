@@ -12,7 +12,7 @@ The following process will allow you to easily setup and run Ipython Notebooks i
 
 ## Installationa and Setup
 
-This process will likely take a few minutes and requires a good internet connection.
+This process will take a few minutes and requires a good internet connection.
 
 ### 1. Install VirtualBox
 
@@ -26,7 +26,7 @@ Download and install Vagrant [here](https://www.vagrantup.com/downloads.html)
  
 Installing Git on your host machine is completely optional, but it can make things a little simpler if you're willing to work with the command line/terminal. Choose one of the following:
 
-1. Use git to download the 'ChomplingDev' Repository:
+1. Use git to download the 'ChomplingDev' Repository: (preferred)
  * Download and install Git [here](https://git-scm.com/downloads)
  * Open command line/terminal and navigate to where you'd like to store your vagrant box.
    * Mac/Linux:```cd ~/Desktop```
@@ -47,6 +47,7 @@ What your computer is doing here:
  * Downloading and installing Ubuntu
  * Installing Git, Python, NLTK, and many other goodies
  * Starting the Ipython server and forwarding that to the host machine at '127.0.0.1:8888'
+ * Starting the RStudio server and forwarding that to the host machine at '127.0.0.1:8787'
 
 #### Mac & Linux
 
@@ -69,7 +70,11 @@ Open the terminal using
 
 ## Access Ipython Notebooks
 
-If you Vagrant box loaded successfully, Ipython Notebooks can be accessed from the [localhost](http://localhost:8888)
+If your Vagrant box loaded successfully, Ipython Notebooks can be accessed from the [localhost](http://localhost:8888)
+
+## Access R Server installation
+
+If your Vagrant box loaded successfully, RStudio server instance can be accessed from the [localhost](http://localhost:8787)
 
 ## Check for Updates
 
