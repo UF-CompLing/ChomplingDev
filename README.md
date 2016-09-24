@@ -78,8 +78,7 @@ The RStudio server instance can be accessed from the [localhost](http://localhos
 
 ## Access Your Vagrant Box Directly
 
-Open the terminal using 
-
+#### Mac & Linux
 ```{bash}
   cd ~/desktop/ChomplingDev
   vagrant ssh
