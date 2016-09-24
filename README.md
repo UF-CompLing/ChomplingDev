@@ -70,11 +70,31 @@ Open the terminal using
 
 ## Access Ipython Notebooks
 
-If your Vagrant box loaded successfully, Ipython Notebooks can be accessed from the [localhost](http://localhost:8888)
+The Ipython Notebooks can be accessed from the [localhost](http://localhost:8888)
 
 ## Access R Server installation
 
-If your Vagrant box loaded successfully, RStudio server instance can be accessed from the [localhost](http://localhost:8787)
+The RStudio server instance can be accessed from the [localhost](http://localhost:8787) using the username, 'vagrant', with password, 'vagrant'.
+
+## Access Your Vagrant Box Directly
+
+Open the terminal using 
+
+```{bash}
+  cd ~/desktop/ChomplingDev
+  vagrant ssh
+```
+
+[More info on Mac termainal](http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line)
+
+#### Windows
+
+On Windows, you'll likely need to use Putty to access your vagrant box.
+
+* Hosname: localhost
+* Port: 2222
+* Username: vagrant
+* Password: vagrant
 
 ## Check for Updates
 
