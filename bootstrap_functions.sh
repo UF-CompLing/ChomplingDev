@@ -30,7 +30,9 @@ function install_ipython() {
         pygments \
         tornado \
         ipython \
-        jupyter
+        jupyter \
+        twython \
+        unidecode
 }
 
 function install_python_nltk() {
