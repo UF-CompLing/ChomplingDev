@@ -63,6 +63,7 @@ Open the terminal using
 #### Windows
 ```{cmd}
   cd ~\Desktop\ChomplingDev
+  vagrant plugin install vagrant-hostsupdater
   vagrant up
 ```
 

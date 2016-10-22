@@ -12,7 +12,7 @@ Vagrant.configure(2) do |config|
   # Configure local network settings
   config.vm.hostname = "chompling-dev"
   #config.hostupdater.remove_on_suspend = false
-  #config.hostupdater.aliases = ["chompling.dev"]
+  config.hostsupdater.aliases = ["chompling.dev"]
   #config.vm.network "private_network", ip: "192.168.33.113"
   config.vm.network "forwarded_port", guest: 8888, host: 8888
   config.vm.network "forwarded_port", guest: 8787, host: 8787
