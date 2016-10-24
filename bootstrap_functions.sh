@@ -32,8 +32,7 @@ function install_ipython() {
         ipython \
         jupyter \
         twython \
-        unidecode \
-	scipy
+        unidecode
 }
 
 function install_python_nltk() {
