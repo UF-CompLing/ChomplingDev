@@ -33,6 +33,9 @@ function install_ipython() {
         jupyter \
         twython \
         unidecode
+        
+    # Run upgrades on packages
+    pip install numpy --upgrade
 }
 
 function install_python_nltk() {
